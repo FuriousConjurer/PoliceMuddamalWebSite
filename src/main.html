@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Collapsible Side Menu Below Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            padding-right: 1%;
+        }
+        .header .header-images {
+            display: flex;
+            gap: 30px;
+            size: 100px;
+        }
+
+        /* Layout container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            width: 250px;
+            background-color: #2c3e50;
+            padding-top: 20px;
+            overflow-x: hidden;
+            transition: width 0.3s;
+        }
+
+        /* Collapsed side menu */
+        .side-menu.collapsed {
+            width: 60px;
+        }
+
+        .side-menu a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s, padding-left 0.3s;
+        }
+
+        /* Adjust padding for collapsed menu */
+        .side-menu.collapsed a {
+            padding-left: 15px;
+        }
+
+        .side-menu a:hover {
+            background-color: #34495e;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex-grow: 1;
+            padding: 15px;
+            transition: margin-left 0.3s;
+        }
+
+        /* Collapse Button */
+        .collapse-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0px;
+            transition: left 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-images">
+            <img src="C:\Users\Nikunj\Downloads\maharstraPolice.jpeg" alt="Image 1">
+            
+        </div>
+        <div class="logo"> E-Muddamaal Management System</div>
+        
+    </div>
+
+    <!-- Container holding side menu and content -->
+    <div class="container">
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <a href="#home">Muddamal Registration</a>
+            <a href="#services">Muddamal Details</a>
+            <a href="#about">Data Survey</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <button class="collapse-btn" id="collapseBtn" onclick="toggleMenu()">☰ Collapse Menu</button>
+            <h1>E Muddamal Management and monitoring System</h1>
+            <p>This is a simple layout with a collapsible side menu below the header. You can add more content here.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the side menu
+        function toggleMenu() {
+            const sideMenu = document.getElementById("sideMenu");
+            const mainContent = document.getElementById("mainContent");
+
+            // Toggle the 'collapsed' class
+            sideMenu.classList.toggle("collapsed");
+        }
+    </script>
+
+</body>
+</html>

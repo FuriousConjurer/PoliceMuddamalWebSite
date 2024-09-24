@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Muddemaal Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Muddemaal Entry Form</h2>
+    <form action="/submit_muddemaal" method="POST">
+        
+        <!-- Serial Number -->
+        <div class="form-group">
+            <label for="serialNumber">Serial Number</label>
+            <input type="text" id="serialNumber" name="serialNumber" required>
+        </div>
+
+        <!-- Crime Number / Station Diary Number -->
+        <div class="form-group">
+            <label for="crimeNumber">Crime Number / Station Diary Number</label>
+            <input type="text" id="crimeNumber" name="crimeNumber" required>
+        </div>
+
+        <!-- Date of Seizure -->
+        <div class="form-group">
+            <label for="seizureDate">Date of Seizure</label>
+            <input type="date" id="seizureDate" name="seizureDate" required>
+        </div>
+
+        <!-- Muddemaal Receipt Number -->
+        <div class="form-group">
+            <label for="receiptNumber">Muddemaal Receipt Number</label>
+            <input type="text" id="receiptNumber" name="receiptNumber" required>
+        </div>
+
+        <!-- Type of Muddemaal -->
+        <div class="form-group">
+            <label for="muddemaalType">Type of Muddemaal</label>
+            <select id="muddemaalType" name="muddemaalType" required onchange="showLiquorOptions(this)">
+                <option value="part5">Part 5 / IPC Offences</option>
+                <option value="part6">Part 6 / Local Laws</option>
+                <option value="liquor">Liquor</option>
+                <option value="unnaturalDeath">Property Seized at Time of Unnatural Death</option>
+                <option value="unclaimed">Unclaimed Property</option>
+                <option value="vehicles">Vehicles</option>
+            </select>
+        </div>
+
+        <!-- Liquor Specific Fields (hidden by default) -->
+        <div id="liquorOptions" style="display:none;">
+            <div class="form-group">
+                <label for="liquorType">Type of Liquor</label>
+                <input type="text" id="liquorType" name="liquorType">
+            </div>
+            <div class="form-group">
+                <label for="bottleCount">Number of Bottles</label>
+                <input type="number" id="bottleCount" name="bottleCount" min="0">
+            </div>
+            <div class="form-group">
+                <label for="liquorQuantity">Quantity of Liquor (in mL)</label>
+                <input type="number" id="liquorQuantity" name="liquorQuantity" min="0">
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <!-- Quantity -->
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="0" required>
+        </div>
+
+        <!-- Price -->
+        <div class="form-group">
+            <label for="price">Price (in INR)</label>
+            <input type="number" id="price" name="price" min="0" step="0.01" required>
+        </div>
+
+        <!-- Present Status of Muddemaal -->
+        <div class="form-group">
+            <label for="status">Present Status of Muddemaal</label>
+            <input type="text" id="status" name="status" required>
+        </div>
+
+        <input type="submit" value="Submit Muddemaal">
+
+    </form>
+
+    <script>
+        function showLiquorOptions(select) {
+            const liquorOptions = document.getElementById('liquorOptions');
+            if (select.value === 'liquor') {
+                liquorOptions.style.display = 'block';
+            } else {
+                liquorOptions.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

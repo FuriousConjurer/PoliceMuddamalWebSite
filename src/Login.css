@@ -1,0 +1,102 @@
+/* Main container for the login page */
+.login-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Left section styling */
+  .left-section {
+    flex: 2;
+    background-color: black; /* Dark blue color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .left-section h2 {
+    margin-top: 20px;
+    font-size: 48px;
+  }
+  
+  .police-logo {
+    width: 500px;
+    height: auto;
+  }
+  
+  /* Right section styling */
+  .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7fa; /* Light gray background */
+  }
+  
+  .login-box {
+    width: 320px; /* Control the form width */
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f5f7fa; /* Background similar to the page */
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(to right, #0056b3, #00408b);
+  }
+  
+  .forgot-password {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot-password span {
+    font-weight: bold;
+  }
+  
+  p {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  

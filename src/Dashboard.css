@@ -1,0 +1,88 @@
+/* Dashboard.css */
+
+/* General layout */
+.header-row {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .filters-row {
+    margin: 10px 0;
+  }
+  
+  .add-btn {
+    margin-right: 10px;
+  }
+  
+  .logout-btn {
+    margin-left: 10px;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Table Styling */
+  .muddamaal-table {
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  .muddamaal-table thead {
+    background-color: #f8f9fa;
+  }
+  
+  .muddamaal-table th,
+  .muddamaal-table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .muddamaal-table td {
+    vertical-align: middle;
+  }
+  
+  /* Category labels */
+  .red-label {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .green-label {
+    background-color: #2ecc71;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  /* Action buttons */
+  .action-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+  }
+  
+  /* Footer */
+  .footer-row {
+    margin-top: 20px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
