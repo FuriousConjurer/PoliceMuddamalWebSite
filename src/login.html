@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Login Page</title>
+    <link rel="stylesheet" href="stylesLogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="./mumbai_logo.png" alt="Police Emblem" class="police-emblem">
+        </div>
+        <div class="right-section">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm" onsubmit="validateLogin(event)">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+                <p id="errorMessage" style="color:red; display:none;">Invalid username or password!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript validation for demonstration
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Example hardcoded credentials
+            const validUsername = 'admin';
+            const validPassword = '12345';
+
+            // Check if credentials match
+            if (username === validUsername && password === validPassword) {
+                // If credentials are correct, redirect to the new page
+                window.location.href = 'muddemalDetails.html'; // Redirect to the dashboard or target page
+            } else {
+                // Show error message if credentials are wrong
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Collapsible Side Menu with Muddamal Table</title>
+    <style>
+        /* Add your existing styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            padding-right: 1%;
+        }
+
+        .header .header-images {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* Layout container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            width: 250px;
+            background-color: #2c3e50;
+            padding-top: 20px;
+            overflow-x: hidden;
+            transition: width 0.3s;
+        }
+
+        .side-menu a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+        .side-menu a:hover {
+            background-color: #34495e;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex-grow: 1;
+            padding: 15px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Collapse Button */
+        .collapse-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0px;
+            transition: left 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-images">
+            <img src="./mumbai_logo.png" alt="Image 1">
+        </div>
+        <div class="logo"> muddemla details E-Muddamaal Management System</div>
+    </div>
+
+    <!-- Container holding side menu and content -->
+    <div class="container">
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <a class ="current" type="button" href="./muddemalDetails.html" onclick="showMuddamalDetails();return false;">Muddamal Details</a>
+            <a href="#service"><i class="fas fa-home"></i> Muddamal Registration</a>
+            <a href="#data"><i class="fas fa-chart-bar"></i> Data Survey</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <button class="collapse-btn" id="collapseBtn" onclick="toggleMenu()">☰ Collapse Menu</button>
+            <h1>E Muddamal Management and Monitoring System</h1>
+            <p>This is a simple layout with a collapsible side menu below the header. You can add more content here.</p>
+
+            <!-- Table Section -->
+            <div id="muddamalDetailsSection" style="display: none;">
+                <h2>Muddamal Details</h2>
+                <table id="muddamalTable">
+                    <thead>
+                        <tr>
+                            <th>Serial Number</th>
+                            <th>Crime Number</th>
+                            <th>Date of Seizure</th>
+                            <th>Receipt Number</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Present Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the side menu
+        function toggleMenu() {
+            const sideMenu = document.getElementById("sideMenu");
+            sideMenu.classList.toggle("collapsed");
+        }
+
+        // Function to show Muddamal details and fetch data
+        function showMuddamalDetails() {
+            document.getElementById('muddamalDetailsSection').style.display = 'block';
+            fetchMuddamalData(); // Call the API to fetch the data
+        }
+
+        // Function to fetch Muddamal data from the server
+        async function fetchMuddamalData() {
+            try {
+                const response = await fetch('/api/muddamal/all'); // Adjust this URL to your actual API endpoint
+                const muddamalList = await response.json();
+                const tableBody = document.querySelector('#muddamalTable tbody');
+
+                // Clear existing table rows
+                tableBody.innerHTML = '';
+
+                // Populate table with data
+                muddamalList.forEach(muddamal => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${muddamal.serialNumber}</td>
+                        <td>${muddamal.crimeNumber}</td>
+                        <td>${muddamal.dateOfSeizure}</td>
+                        <td>${muddamal.muddemaalReceiptNumber}</td>
+                        <td>${muddamal.typeOfMuddemaal}</td>
+                        <td>${muddamal.description}</td>
+                        <td>${muddamal.quantity}</td>
+                        <td>${muddamal.price}</td>
+                        <td>${muddamal.presentStatus}</td>
+                        <td class="actions">
+                            <button onclick="viewMuddamal(${muddamal.serialNumber})">View</button>
+                            <button onclick="editMuddamal(${muddamal.serialNumber})">Edit</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching Muddamal data:', error);
+            }
+        }
+
+        // Function to view Muddamal details
+        function viewMuddamal(serialNumber) {
+            // Implement view logic (e.g., open a modal or navigate to a new page)
+            alert('View Muddamal: ' + serialNumber);
+        }
+
+        // Function to edit Muddamal details
+        function editMuddamal(serialNumber) {
+            // Implement edit logic (e.g., open a form to edit)
+            alert('Edit Muddamal: ' + serialNumber);
+        }
+    </script>
+</body>
+</html>
