@@ -3,6 +3,8 @@ package com.police.emuddamal.objects;
 import java.time.LocalDate;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Muddemaal{
 
     private int serialNumber;
