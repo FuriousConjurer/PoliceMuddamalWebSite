@@ -14,12 +14,19 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (username === 'admin' && password === 'admin') {
-      // If the username and password are correct, navigate to the dashboard
-      navigate('/dashboard');
+      // If the username and password are correct, navigate to the Dashboard
+      navigate('/Dashboard');
     } else {
       // Show an error if login fails
       setError('Invalid username or password');
     }
+  };
+
+  // Placeholder for handling the "Forgot Password" link
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    // Add logic for forgotten password here, e.g., navigate to a reset password page
+    alert('Redirecting to forgot password page');
   };
 
   return (
@@ -38,6 +45,7 @@ const Login = () => {
               className="login-input"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required // Add required attribute for better UX
             />
             <input
               type="password"
@@ -45,12 +53,20 @@ const Login = () => {
               className="login-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required // Add required attribute for better UX
             />
             {error && <p style={{ color: 'red' }}>{error}</p>} {/* Error message */}
             <button type="submit" className="login-button">Login</button>
           </form>
-          <a href="#" className="forgot-password">Forgot <span>Password?</span></a>
-          <p>Don't have an account? <a href="#">Sign up</a></p>
+          <button onClick={handleForgotPassword} className="forgot-password" style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
+            Forgot <span>Password?</span>
+          </button>
+          <p>
+            Don't have an account? 
+            <button onClick={() => alert('Sign up functionality to be implemented')} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
+              Sign up
+            </button>
+          </p>
         </div>
       </div>
     </div>

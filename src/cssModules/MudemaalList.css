@@ -1,0 +1,68 @@
+.header-row {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.website-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.current-time {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.muddamaal-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.muddamaal-table th,
+.muddamaal-table td {
+  padding: 12px;
+  text-align: center; /* Centering table header text */
+  vertical-align: middle;
+}
+
+.muddamaal-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.muddamaal-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.muddamaal-table tr:hover {
+  background-color: #e9ecef; /* Highlight on hover */
+}
+
+.action-btn {
+  margin: 0 5px; /* Space between buttons */
+}
+
+.search-input {
+  padding: 5px;
+  width: 100%; /* Full width for better alignment */
+  max-width: 300px; /* Limit width for usability */
+  margin-left: 10px; /* Margin for better spacing */
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;               /* Use flexbox to align buttons */
+  justify-content: center;     /* Center align the buttons */
+  gap: 5px;                   /* Space between buttons */
+}
+
+.action-btn {
+  min-width: 70px;            /* Set a minimum width for uniform button size */
+}

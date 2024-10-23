@@ -1,0 +1,194 @@
+/* General layout */
+.header-row {
+  display: flex;
+  justify-content: space-between; /* Space between logo and title + buttons */
+  align-items: center; /* Vertically center the items */
+  margin-bottom: 10px;
+  background-color: #2d3276;
+  padding: 10px 20px; /* Reduced padding */
+  color: white;
+  text-align: center;
+  height: auto; /* Let the content define height */
+}
+
+.logo-container {
+  text-align: left; /* Align logo to the left */
+}
+
+.police-logo {
+  width: 120px; /* Adjust the logo size to be smaller */
+  height: auto;
+}
+
+.website-title {
+  font-size: 20px; /* Reduced font size */
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.current-time {
+  font-size: 12px;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* Tabs Navigation Styling */
+.nav-tabs {
+  border-bottom: 2px solid #2d3276; /* Add a bold border for the tabs */
+  margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+  color: #2d3276; /* Dark blue text color */
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0; /* Rounded top corners */
+  margin-right: 5px; /* Space between tabs */
+  text-align: center;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #2d3276; /* Active tab color */
+  color: white; /* Active tab text color */
+  border-color: #2d3276; /* Active tab border color */
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #c8d0ea; /* Hover effect */
+  color: #2d3276; /* Text color on hover */
+}
+
+/* Chart Section */
+.chart-section {
+  margin-top: 20px;
+}
+
+/* Filters and search row */
+.filters-row {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Table Styling */
+.muddamaal-table {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.muddamaal-table thead {
+  background-color: #f8f9fa;
+}
+
+.muddamaal-table th,
+.muddamaal-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.muddamaal-table td {
+  vertical-align: middle;
+}
+
+/* Category labels */
+.red-label {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.green-label {
+  background-color: #2ecc71;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Action buttons */
+.action-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Footer */
+.footer-row {
+  margin-top: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Table striped */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* Style the info boxes */
+.info-box {
+  background-color: #f0f0f0; /* Light grey background */
+  border: 2px solid #ccc; /* Border to make it stand out */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  transition: all 0.3s ease;
+}
+
+/* Add different background colors for each box */
+.info-box:nth-child(1) {
+  background-color: #ffdddd; /* Light red */
+}
+
+.info-box:nth-child(2) {
+  background-color: #ddffdd; /* Light green */
+}
+
+.info-box:nth-child(3) {
+  background-color: #dddfff; /* Light blue */
+}
+
+.info-box:nth-child(4) {
+  background-color: #ffffdd; /* Light yellow */
+}
+
+/* Hover effect */
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust spacing between the boxes */
+.info-box-row .col-md-3 {
+  margin-bottom: 15px;
+}
+
+/* Category distribution section */
+.flex-section {
+  margin-top: 20px; /* Reduce the space at the top */
+}
+
+/* Consolidate Data and other section styles */
+.chart-section h2,
+.flex-section h4 {
+  margin-bottom: 20px; /* Adjust spacing between headings and content */
+}

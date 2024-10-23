@@ -39,6 +39,7 @@
         .header .header-images {
             display: flex;
             gap: 30px;
+            size: 100px;
         }
 
         /* Layout container */
@@ -68,23 +69,13 @@
             text-decoration: none;
             font-size: 18px;
             color: white;
-            display: flex;
-            align-items: center;
+            display: block;
             transition: background-color 0.3s, padding-left 0.3s;
         }
 
         /* Adjust padding for collapsed menu */
         .side-menu.collapsed a {
             padding-left: 15px;
-        }
-
-        .side-menu a i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        .side-menu.collapsed a i {
-            margin-right: 0;
         }
 
         .side-menu a:hover {
@@ -104,35 +95,11 @@
             color: white;
             border: none;
             padding: 10px 15px;
+            
             cursor: pointer;
             font-size: 16px;
-            margin: 0;
+            margin: 0px;
             transition: left 0.3s;
-        }
-
-        /* Media Queries for Responsive Design */
-        @media (max-width: 768px) {
-            .side-menu {
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-            }
-
-            .side-menu.collapsed {
-                width: 0;
-            }
-
-            .collapse-btn {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-
-            .main-content {
-                margin-top: 60px;
-            }
         }
     </style>
 </head>
@@ -141,9 +108,11 @@
     <!-- Header -->
     <div class="header">
         <div class="header-images">
-            <img src="./mumbai_logo.png" alt="Image1">
+            <img src="./mumbai_logo.png" alt="Image 1">
+            
         </div>
         <div class="logo"> E-Muddamaal Management System</div>
+        
     </div>
 
     <!-- Container holding side menu and content -->
@@ -151,15 +120,15 @@
 
         <!-- Side Menu -->
         <div class="side-menu" id="sideMenu">
-            <a href="./muddemalDetails.html" > Muddamal Details</a>
-            <a href="./main.html"><i class="fas fa-home"></i> Muddamal Registration</a>
-            <a href="./main.html"><i class="fas fa-chart-bar"></i> Data Survey</a>
+            <a href="#home">Muddamal Registration</a>
+            <a href="#services">Muddamal Details</a>
+            <a href="#about">Data Survey</a>
         </div>
 
         <!-- Main Content -->
         <div class="main-content" id="mainContent">
             <button class="collapse-btn" id="collapseBtn" onclick="toggleMenu()">☰ Collapse Menu</button>
-            <h1>E Muddamal Management and Monitoring System</h1>
+            <h1>E Muddamal Management and monitoring System</h1>
             <p>This is a simple layout with a collapsible side menu below the header. You can add more content here.</p>
         </div>
     </div>
@@ -174,7 +143,6 @@
             sideMenu.classList.toggle("collapsed");
         }
     </script>
-    <!-- Add FontAwesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </body>
 </html>
